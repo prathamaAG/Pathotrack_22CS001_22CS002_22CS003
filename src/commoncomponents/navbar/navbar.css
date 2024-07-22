@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(209, 19, 19, 0.909);
+    background: linear-gradient(to right, rgba(113, 9, 9, 0.909), rgba(255, 0, 0, 0.909), rgba(113, 9, 9, 0.909));
     padding: 0 10px;
 }
 
@@ -37,9 +37,9 @@ h1 {
 
 .linksrightnavbar {
     margin: 0px 20px; /* Adjust left and right margin */
-    padding: 18px 28px; /* Adjust top and bottom padding */
+    padding: 12px 28px; /* Adjust top and bottom padding */
     border: 1px solid rgba(255, 255, 255, 0.909);
-    border-radius: 18px;
+    border-radius: 50px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -52,7 +52,7 @@ h1 {
     transition: background-color 0.3s ease; 
 }
 
-.linksrightnavbar:hover {
-    background-color: rgb(255, 0, 0);
+ .linksrightnavbar:hover {
+    background: linear-gradient(to right, rgba(113, 9, 9, 0.909), rgba(255, 0, 0, 0.909), rgba(113, 9, 9, 0.909));
     color: white;
-}
+} 
