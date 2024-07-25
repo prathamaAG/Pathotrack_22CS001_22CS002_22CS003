@@ -14,13 +14,13 @@ const Navbar = () => {
             Create new
           </div>
           <div className = "linksrightnavbar">
-            Report
-          </div>
-          <div className = "linksrightnavbar">
             Add Test
           </div>
           <div className = "linksrightnavbar">
-            Contact
+            Report
+          </div>
+          <div className = "linksrightnavbar">
+             Billing
           </div>
        </div>
     </div>

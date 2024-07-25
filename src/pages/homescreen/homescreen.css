@@ -1,0 +1,160 @@
+.homescreen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.introhomescreen {
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(244, 231, 231, 0.909), rgba(236, 145, 145, 0.909), rgba(244, 231, 231, 0.909));
+}
+
+/*intro section*/
+.imghomescreenlogo {
+    display: flex;
+    width: 100%;
+}
+
+.imgDiv {
+    width: 40%;
+    padding: 50px 110px;
+}
+
+.intropart {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 150px;
+}
+
+.lablogohomescreen {
+    width: 128%;
+    height: 350px;
+    border-radius: 5px;
+}
+
+.titlemini {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.titlemajor {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.description1, .description2 {
+    margin-top: 10px;
+    text-align: justify;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.topBtnDiv {
+    display: flex;
+    margin-top: 20px;
+}
+
+.btns-div {
+    width: 120px;
+    border: 1px solid;
+    font-size: 18px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    cursor: pointer;
+}
+
+.btns-div:hover {
+    background: linear-gradient(to right, rgba(113, 9, 9, 0.909), rgba(255, 0, 0, 0.909), rgba(113, 9, 9, 0.909));
+    color: white;
+} 
+
+/*tests section*/
+.testhomescreen {
+    width: 100%;
+    border-top: 1px solid rgba(236, 145, 145, 0.909);
+    display: flex;
+}
+
+.leftparttest {
+    width: 25%;
+    padding: 20px;
+}
+
+.totaltest {
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.testNamediv {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid rgba(236, 145, 145, 0.909);
+}
+
+.testNameTitle {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.testNameTitle:hover {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.909), rgba(113, 9, 9, 0.909));
+    --p : 100%;
+    color: white;
+}
+
+.rightparttest{
+   width: 75%;
+   padding:10px 20px ;
+   font-size: 28px;
+   border: 1px solid rgba(236, 145, 145, 0.909);
+}
+
+.bottomRightPart{
+    border-top: 1px solid rgba(236, 145, 145, 0.909);
+    padding-top: 10px ;
+    height: 320px;
+    overflow-y: auto;
+}
+
+.topbottomRightPart{
+    font-size: 18px;
+}
+
+.bottombottomRightPart{
+    display: flex;
+}
+
+.bBRightPartLeftSide{
+    width: 50%;
+    padding: 20px;
+}
+
+.bBRightPartRightSide{
+    width: 50%;
+    padding-top: 20px;
+}
+
+.bBRightImage{
+    width: 75%;
+}
+.detailsBlock{
+    padding-top:10px ;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.spanColorChange{
+    color: rgba(113, 9, 9, 0.909) ;
+
+}
