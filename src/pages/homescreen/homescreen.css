@@ -147,6 +147,7 @@
 
 .bBRightImage{
     width: 75%;
+    border-radius: 5px ;
 }
 .detailsBlock{
     padding-top:10px ;
