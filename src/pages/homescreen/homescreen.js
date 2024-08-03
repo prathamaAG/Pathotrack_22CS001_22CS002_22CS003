@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './homescreen.css';
 import LabPic from '../../assets/labscientist.webp';
-import XrayPic from '../../assets/xray.jpeg';
-import EcgPic from '../../assets/ecg.jpeg';
-import CBCPic from '../../assets/cbc.jpeg';
-import ULTPic from '../../assets/ult.jpg';
+import data from './data.json';
 
 const Homescreen = () => {
+  const [listofTest, setListofTest] = useState([]);
+  const [activeIndexNav, setActiveIndexNav] = useState(0);
+  const [selectedDetailedTest, setSelectedDetailtest] = useState(null);
+
+  useEffect(() => {
+    setSelectedDetailtest(data.data[0]);
+    setListofTest(data.data);
+  }, []);
+
+  const handleClickNavLink = (index) => {
+    setActiveIndexNav(index);
+    setSelectedDetailtest(data.data[index]);
+  };
+
   return (
     <div className="homescreen">
       <div className="introhomescreen">
@@ -25,58 +36,68 @@ const Homescreen = () => {
             </div>
             <div className="topBtnDiv">
               <div className="btns-div">
-                create
+                Create
               </div>
               <div className="btns-div">
-                contact
+                <a style={{ textDecoration: "none", color: "white" }} href='#feedback'>Feedback</a>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
       <div className='testhomescreen'>
-         <div className="leftparttest">
-          <div className="totaltest">4 Test available</div>
+        <div className="leftparttest">
+          <div className="totaltest">4 Tests available</div>
           <div className="testNamediv">
-            <div className="testNameTitle">X-RAY TEST</div>
-            <div className="testNameTitle">ECG TEST</div>
-            <div className="testNameTitle">CBC TEST</div>
-            <div className="testNameTitle">ULTRASOUND TEST</div>
+            {listofTest.map((item, index) => (
+              <div
+                key={item.id}
+                onClick={() => handleClickNavLink(index)}
+                className={`testNameTitle ${activeIndexNav === index ? "activeNavLink" : null}`}
+              >
+                {item.name}
+              </div>
+            ))}
           </div>
-         </div>
-         <div className="rightparttest">
-            <div className="topRightPart">
-                  X-RAY TEST
-            </div>
-            <div className="bottomRightPart">
+        </div>
+        <div className="rightparttest">
+          <div className="topRightPart">
+            {selectedDetailedTest?.name}
+          </div>
+          <div className="bottomRightPart">
             <div className="topbottomRightPart">
-            An X-ray is a quick, painless test that produces images of the structures inside your body — particularly your bones.
+              {selectedDetailedTest?.description}
             </div>
             <div className="bottombottomRightPart">
-            <div className="bBRightPartLeftSide">
-            <div className="detailsBlock">
-              Fasting:<span className='spanColorChange'> Not Required</span>
+              <div className="bBRightPartLeftSide">
+                {selectedDetailedTest?.requirements.map((item, index) => (
+                  <div key={index} className="detailsBlock">
+                    {item.key} : <span className='spanColorChange'>{item.value}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bBRightPartRightSide">
+                <img src={selectedDetailedTest?.imgLink} alt='pic' className='bBRightImage'/>
+              </div>
             </div>
-            <div className="detailsBlock">
-              Data Shown:<span className='spanColorChange'>X-rays show the internal structure of the body, such as bones, organs, and tissues. They can reveal fractures, infections, lung conditions (like pneumonia), and abnormalities such as tumors.</span>
-            </div>
-            <div className="detailsBlock">
-             Estimated Price in India:<span className='spanColorChange'>₹250 - ₹1000</span>
-            </div>
-  
-            </div>
-            <div className="bBRightPartRightSide">
-            <img src={XrayPic} alt='XRAYPIC'className='bBRightImage'/>
-            </div>
-            </div>
-            </div>
-         </div>
-       </div>
-       {/* <div className='contacthomescreen'>
-         contact
-       </div> */}
+          </div>
+        </div>
+      </div>
+
+      {/* Feedback Form */}
+      <div className='feedbackHomeScreen'>
+        <div className='feedbackFormTitle' id="feedback">Feedback Form</div>
+        <div className='feedbackForm'>
+          <div className='inputFields'>
+            <input type='text' className='inputFieldsBox' placeholder='Enter your Name'/>
+            <input type='number' className='inputFieldsBox' placeholder='Enter your Mobile Number'/>
+            <input type='email' className='inputFieldsBox' placeholder='Enter your Email Id'/>
+            <textarea className='inputTextareaMessage' placeholder='Type your message here ...' rows={10} />
+          </div>
+          <div className='sendEmailButton'>SEND</div>
+        </div>
+      </div>
     </div>
   );
 }
