@@ -182,7 +182,6 @@
 
 /* Feedback Form */
 .feedbackHomeScreen {
-    margin-top: 0; /* Removed gap between feedback form and tests */
     display: flex;
     flex-direction: column;
     justify-content: center;
